@@ -10,5 +10,5 @@
   "browser_action": {
     "default_popup": "popup.html"
   },
-  "permissions": ["alarms"]
+  "permissions": ["alarms", "tabs", "activeTab", "storage"]
 }
