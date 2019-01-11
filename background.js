@@ -2,7 +2,7 @@
 
 function alertUser() {
   chrome.storage.local.get(['tabUrl'], function(result) {
-    window.alert(result.tabUrl);
+    chrome.tabs.create({ url: result.tabUrl });
   });
 }
 
