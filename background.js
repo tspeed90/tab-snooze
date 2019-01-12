@@ -1,9 +1,14 @@
 function returnTab() {
-  chrome.storage.local.get(['snoozeUntil', 'tabUrl'], function(result) {
-    if (Date.now() > result.snoozeUntil) {
-      chrome.tabs.create({ url: result.tabUrl });
-      chrome.storage.local.remove(['snoozeUntil', 'tabUrl']);
-    }
+  chrome.storage.local.get(['snoozedTabs'], function(result) {
+    result.snoozedTabs.forEach(function(tab) {
+      if (Date.now() > tab.snoozeUntil) {
+        chrome.tabs.create({ url: tab.tabUrl });
+      }
+    });
+    let pendingTabs = result.snoozedTabs.filter(function(tab) {
+      return tab.snoozeUntil > Date.now();
+    });
+    chrome.storage.local.set({ snoozedTabs: pendingTabs });
   });
 }
 
