@@ -1,5 +1,9 @@
 function returnTab() {
   chrome.storage.local.get(['snoozedTabs'], function(result) {
+    if (result.snoozedTabs.length === 0) {
+      chrome.alarms.clear('tabsAlarm');
+      return;
+    }
     result.snoozedTabs.forEach(function(tab) {
       if (Date.now() > tab.snoozeUntil) {
         chrome.tabs.create({ url: tab.tabUrl });

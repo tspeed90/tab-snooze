@@ -8,7 +8,7 @@ function getTimestamp(mins) {
 }
 
 function snoozeTab(mins) {
-  chrome.alarms.create({ periodInMinutes: 1 });
+  chrome.alarms.create('tabsAlarm', { periodInMinutes: 1 });
   chrome.storage.local.get(['snoozedTabs'], function(results) {
     console.log(results);
     if (results.snoozedTabs === undefined) {
