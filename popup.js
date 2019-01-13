@@ -1,42 +1,38 @@
-let minSnooze = document.getElementById('minutes-btn');
+let hourSnooze = document.getElementById('hours-btn');
 let daySnooze = document.getElementById('days-btn');
 let timeInput = document.getElementById('time-input');
 
-function getTimestamp(mins) {
+function getTimestamp(hours) {
   let currentTime = Date.now();
-  return currentTime + mins * 60 * 1000;
+  return currentTime + hours * 60 * 60 * 1000;
 }
 
-function snoozeTab(mins) {
-  chrome.alarms.create('tabsAlarm', { periodInMinutes: 1 });
+function snoozeTab(hours) {
+  chrome.alarms.create('tabsAlarm', { periodInMinutes: 10 });
   chrome.storage.local.get(['snoozedTabs'], function(results) {
-    console.log(results);
     if (results.snoozedTabs === undefined) {
       results.snoozedTabs = [];
     }
     chrome.tabs.query({ active: true, currentWindow: true }, function(tab) {
       results.snoozedTabs.push({
         tabUrl: tab[0].url,
-        snoozeUntil: getTimestamp(mins)
+        snoozeUntil: getTimestamp(hours)
       });
       chrome.storage.local.set(
         { snoozedTabs: results.snoozedTabs },
         function() {
           chrome.tabs.remove(tab[0].id);
-          chrome.storage.local.get(null, function(results) {
-            console.log(results);
-          });
         }
       );
     });
   });
 }
 
-minSnooze.addEventListener('click', function() {
+hourSnooze.addEventListener('click', function() {
   snoozeTab(timeInput.value);
 });
 
 daySnooze.addEventListener('click', function() {
-  const minutesToSnooze = timeInput.value * 24 * 60;
-  snoozeTab(minutesToSnooze);
+  const hoursToSnooze = timeInput.value * 24 * 60;
+  snoozeTab(hoursToSnooze);
 });
