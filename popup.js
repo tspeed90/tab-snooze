@@ -16,6 +16,7 @@ function snoozeTab(hours) {
     chrome.tabs.query({ active: true, currentWindow: true }, function(tab) {
       results.snoozedTabs.push({
         tabUrl: tab[0].url,
+        title: tab[0].title,
         snoozeUntil: getTimestamp(hours)
       });
       chrome.storage.local.set(
