@@ -5,6 +5,7 @@ chrome.storage.local.get(['snoozedTabs'], function(results) {
     tabRow.setAttribute('id', 'row');
     main.appendChild(tabRow);
     const deleteBtn = document.createElement('button');
+    deleteBtn.setAttribute('id', 'delete-btn');
     deleteBtn.textContent = 'delete';
     const link = document.createElement('a');
     link.setAttribute('href', tab.tabUrl);

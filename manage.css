@@ -6,14 +6,19 @@ body {
 
 h1,
 h2 {
-  margin: 8px auto;
+  margin: 1rem auto;
   color: #444;
+  font-weight: lighter;
+}
+
+h2 {
+  font-size: 1.3rem;
 }
 
 #main {
   width: 60%;
   margin: 0 auto;
-  background-color: #fafafa;
+  background-color: #f0efef;
   padding: 1.5rem;
 }
 
@@ -25,11 +30,15 @@ a {
   margin: 1rem;
 }
 
-button {
-  padding: 10px;
-  background-color: #f7b545;
-  color: #444;
-  border: 1px solid #444;
+#delete-btn {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #f0efef;
+  color: #333;
+  border: 1px solid #d89a2f;
+  width: 55px;
   border-radius: 15px;
+  padding: 7px;
   margin: 10px;
+  box-shadow: 0px 2px 4px #ccc;
 }
