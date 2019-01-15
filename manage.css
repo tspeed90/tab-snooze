@@ -1,0 +1,35 @@
+body {
+  background-color: #f7b545;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2 {
+  margin: 8px auto;
+  color: #444;
+}
+
+#main {
+  width: 60%;
+  margin: 0 auto;
+  background-color: #fafafa;
+  padding: 1.5rem;
+}
+
+a {
+  color: #444;
+}
+
+#row {
+  margin: 1rem;
+}
+
+button {
+  padding: 10px;
+  background-color: #f7b545;
+  color: #444;
+  border: 1px solid #444;
+  border-radius: 15px;
+  margin: 10px;
+}

@@ -2,6 +2,7 @@ chrome.storage.local.get(['snoozedTabs'], function(results) {
   results.snoozedTabs.forEach(function(tab) {
     const main = document.getElementById('main');
     const tabRow = document.createElement('div');
+    tabRow.setAttribute('id', 'row');
     main.appendChild(tabRow);
     const deleteBtn = document.createElement('button');
     deleteBtn.textContent = 'delete';
