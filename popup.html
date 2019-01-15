@@ -11,12 +11,18 @@
     <h1>TabSnooze</h1>
     <div id="main">
       <div id="input">
-        <input id="time-input" type="number" placeholder="How long?" />
+        <input
+          id="time-input"
+          type="number"
+          placeholder="How long?"
+          aria-label="enter a number, then click the hours or days button"
+        />
       </div>
       <div id="buttons">
         <button id="hours-btn">Hours</button>
         <button id="days-btn">Days</button>
       </div>
+      <a href="chrome-extension://dcafoagelihhpngnhpcgeoomaopiifff/manage.html" target="_blank" id="manage-tabs">Manage Snoozed Tabs</footer>
     </div>
 
     <script src="popup.js"></script>
