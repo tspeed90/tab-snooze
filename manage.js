@@ -18,6 +18,12 @@ chrome.storage.local.get(['snoozedTabs'], function(results) {
 });
 
 function deleteRow(tab, tabRow) {
-  // chrome.storage.local.remove(tab);
-  tabRow.parentNode.removeChild(tabRow);
+  chrome.storage.local.get(['snoozedTabs'], function(results) {
+    const rowsToKeep = results.snoozedTabs.filter(function(result) {
+      return result.tabUrl !== tab.tabUrl;
+    });
+    chrome.storage.local.set({ snoozedTabs: rowsToKeep }, function() {
+      tabRow.parentNode.removeChild(tabRow);
+    });
+  });
 }
