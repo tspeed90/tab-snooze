@@ -8,4 +8,10 @@ TabSnooze is a Chrome extension that allows you to snooze your tabs and declutte
 
 (Time is approximate and tabs may not reappear precisely on time)
 
+### Managing Tabs
+
+You can manage your snoozed tabs by clicking the link in the pop-up. You will be redirected to a page with a list of all pages that have been snoozed. From there, you are able to delete them in case of accidental snoozing or if you want to reopen the tabs sooner than the set time.
+
+Note: As of right now, clicking the link of a snoozed tab will take you to the page, but will not automatically delete the page from your snooze alarms. You must remove them manually.
+
 Icon made by <a href="https://icon54.com/" title="Pixel Perfect">Pixel Perfect </a>from www.flaticon.com.
