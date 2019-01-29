@@ -9,9 +9,15 @@ chrome.storage.local.get(['snoozedTabs'], function(results) {
     deleteBtn.textContent = 'delete';
     const link = document.createElement('a');
     link.setAttribute('href', tab.tabUrl);
+    const snoozeUntilTime = moment(tab.snoozeUntil).format(
+      'MMMM Do YYYY, h:mm a'
+    );
     link.textContent = tab.title || tab.tabUrl;
+    const time = document.createElement('span');
+    time.textContent = ' | Snoozed until: ' + snoozeUntilTime;
     tabRow.appendChild(deleteBtn);
     tabRow.appendChild(link);
+    tabRow.appendChild(time);
 
     deleteBtn.addEventListener('click', function() {
       deleteRow(tab, tabRow);
