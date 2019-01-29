@@ -18,6 +18,6 @@ Note: As of right now, clicking the link of a snoozed tab will take you to the p
 
 - Add options to open tab in focus or allow it to open in the background with a notification
 - Add option to snooze alarm once reopened
-- Add "visit + delete" button in manage page to allow users to visit the page early a& auto-remove page from snoozed list in one click
+- Add "visit + delete" button in manage page to allow users to visit the page early & auto-remove page from snoozed list in one click
 
 Icon made by <a href="https://icon54.com/" title="Pixel Perfect">Pixel Perfect </a>from www.flaticon.com.
