@@ -1,3 +1,5 @@
+chrome.alarms.create('tabsAlarm', { periodInMinutes: 10 });
+
 function returnTab() {
   chrome.storage.local.get(['snoozedTabs'], function(result) {
     if (result.snoozedTabs.length === 0) {
