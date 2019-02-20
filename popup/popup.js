@@ -34,6 +34,6 @@ hourSnooze.addEventListener('click', function() {
 });
 
 daySnooze.addEventListener('click', function() {
-  const hoursToSnooze = timeInput.value * 24 * 60;
+  const hoursToSnooze = timeInput.value * 24;
   snoozeTab(hoursToSnooze);
 });
